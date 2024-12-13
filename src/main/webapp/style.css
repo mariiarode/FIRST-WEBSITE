@@ -1,0 +1,249 @@
+@charset "UTF-8";
+html{
+    background: white;
+}
+
+#container{
+    width: 90%;
+    margin: auto;
+    font-family: "Tahoma", "sans-serif";
+    font-size: 1rem;
+}
+
+#header{
+    width: 100%;
+    background: #ccc;
+    text-align: center;
+    font-size: 2.5rem;
+    height: 150px;
+}
+
+#header h1 {
+    margin: 0;
+    padding-top: 1rem;
+}
+
+#middle{
+    margin-top: 1rem;
+}
+
+
+#footer{
+    clear: both;
+    background: #888;
+    color: white;
+    padding: 0.2rem;
+    text-align: center;
+}
+
+#menu {
+    float:none;
+    width: 10rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Ocupa toda la longitud */
+}
+
+#menu li {
+    flex: 1; /* Distribuye el ancho de forma equitativa */
+}
+
+#menu li:nth-child(1) {
+    background: lightskyblue;
+}
+
+#menu li:nth-child(2) {
+    background: pink;
+}
+
+#menu li:nth-child(3) {
+    background: mediumpurple;
+}
+
+#menu li:nth-child(4) {
+    background: yellow;
+}
+
+#menu li:nth-child(5) {
+    background: lightcoral;
+}
+
+
+#menu li:nth-child(6) {
+    background: royalblue;
+}
+
+#menu2 {
+    float: right;
+    width: 10rem;
+    margin-bottom: 1rem;
+}
+
+
+#news {
+    background: #ddd;
+    padding: 0 0.3rem 0.3rem;
+    text-align: center;
+
+}
+
+#news1 {
+    background: white; /* Fondo blanco */
+    color: black; /* Texto negro */
+    padding: 10px; /* Espacio interior */
+    margin-bottom: 20px; /* Espacio inferior */
+    font-family: "Times New Roman";
+}
+
+#news2 {
+    background: black; /* Fondo negro */
+    color: white; /* Texto blanco */
+    padding: 10px; /* Espacio interior */
+    font-family: "Times New Roman";
+}
+
+#content {
+    background: #ccc;
+    text-align: justify;
+    padding: 0.5rem;
+    margin-right: 11rem;
+    margin-bottom: 1rem;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 0.3rem;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+}
+#hamburger-menu h3 {
+    display: none;
+}
+
+
+#hamburger-input{
+    display: none;
+}
+
+@media only screen and (max-width: 640px) {
+    #menu {
+        width: 100%;
+        padding: 0;
+    }
+
+    #content {
+        margin-left: 0;
+        clear: both;
+        width: 100%;
+
+    }
+
+    #menu2{
+        width: 100%;
+        padding: 0;
+    }
+
+    #news {
+        text-align: center;
+        background: #aaa;
+    }
+
+    #container {
+        min-width: 328px;
+        width: 100%;
+    }
+
+    @media screen and (max-width: 520px) {
+
+        #hamburger-menu {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            display: none;
+            border: none;
+            padding: 0px;
+            margin: 0px;
+            font-family: 'Cabin', Sans-serif;
+            background: linear-gradient(
+                    to bottom,
+                    #3D0E61, #3D0E61 20%,
+                    #ccc 20%, #ccc 40%,
+                    #3D0E61 40%, #3D0E61 60%,
+                    #ccc 60%, #ccc 80%,
+                    #3D0E61 80%, #3D0E61 100%
+            );
+        }
+
+        #hamburger-menu #sidebar-menu {
+            visibility: hidden;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 200px;
+            height: 100%;
+            background-color: #3D0E61;
+            transition: 0.3s;
+            padding: 0px 10px;
+            box-sizing: border-box;
+        }
+
+        #hamburger-menu h3 {
+            color: white;
+            font-size: 2.2rem;
+            display: inline;
+        }
+
+        #hamburger-menu ul {
+            padding-left: 0px;
+            flex-direction: column;
+        }
+
+        #hamburger-menu li {
+            list-style-type: none;
+            line-height: 3rem;
+        }
+
+        #hamburger-menu a {
+            color: #3D0E61;
+            font-size: 1.3rem;
+            text-decoration: none;
+        }
+
+        #hamburger-menu a:hover {
+            text-decoration: underline;
+        }
+
+        #hamburger-input:checked + #hamburger-menu #sidebar-menu {
+            visibility: visible;
+            left: 0;
+        }
+
+        #hamburger-input:checked ~ .overlay {
+            visibility: visible;
+            opacity: 0.4;
+        }
+
+        @media screen and (max-width: 750px) {
+            #main-menu {
+                display: none;
+            }
+
+            #hamburger-menu {
+                display: inline;
+            }
+        }
+
+    }
+}
